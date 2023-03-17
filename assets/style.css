@@ -1,69 +1,72 @@
 .carousel {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.carousel-image-container {
-  position: relative;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
-}
-
-.carousel-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.carousel-image.active {
-  opacity: 1;
-}
-
-.carousel-controls {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  z-index: 1;
-}
-
-.prev-button,
-.next-button {
-  border: none;
-  background-color: gray;
-  border-radius: 50%;
-  color: white;
-  font-size: 48px;
-  cursor: pointer;
-  outline: none;
-}
-
-.carousel-thumbnail.container {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.carousel-thumbnail {
-  margin: 0 10px;
-  width: 100px;
-  height: 60px;
-  object-fit: cover;
-  opacity: 0.5;
-  cursor: pointer;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.carousel-thumbnail.active,
-.carousel-thumbnail:hover {
-  opacity: 1;
-}
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .carousel-image-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+  }
+  
+  .carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-image.active {
+    transform: translateY(0%);
+  }
+  
+  .prev-button.top,
+  .next-button.bottom {
+    position: absolute;
+    z-index: 1;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 48px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .prev-button.top {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .next-button.bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .carousel-thumbnail-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .carousel-thumbnail {
+    margin: 0 10px;
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .carousel-thumbnail.active,
+  .carousel-thumbnail:hover {
+    opacity: 1;
+  }
